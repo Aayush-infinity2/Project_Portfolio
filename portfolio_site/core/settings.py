@@ -90,6 +90,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # MEDIA FILES (For Project Images)
 MEDIA_URL = '/media/'
@@ -118,4 +119,5 @@ REST_FRAMEWORK = {
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/accounts/dashboard/'
+
 LOGOUT_REDIRECT_URL = '/'
