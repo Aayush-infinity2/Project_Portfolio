@@ -5,28 +5,7 @@ This is a robust, full-stack web application built using **Django (Python)**, **
 
 It showcases my projects in **Artificial Intelligence**, **Machine Learning**, and **Software Development**.
 
----
-# 🖥️ Website Screenshots
-
-# 🖥️ Website Screenshots
-
-## 🏠 Home Page
-<img src="portfolio_site/screenshots/Home_page.png" width="800">
-
-## 📂 Projects Page
-<img src="portfolio_site/screenshots/Project_page.png" width="800">
-
-## 🔐 Login Page
-<img src="portfolio_site/screenshots/Login_page.png" width="800">
-
-## 📝 Signup Page
-<img src="portfolio_site/screenshots/Signup_page.png" width="800">
-
-## 📊 Dashboard Page
-<img src="portfolio_site/screenshots/Dashboard_page.png" width="800">
-
-## 📬 Contact Page
-<img src="portfolio_site/screenshots/Contact_page.png" width="800">
+## **Website Screenshots** at the end  ⬇️
 
 ---
 
@@ -67,7 +46,7 @@ It showcases my projects in **Artificial Intelligence**, **Machine Learning**, a
 
 ### Frontend
 - HTML5  
-- Tailwind CSS  
+- Tailwind CSS (CDN) 
 - JavaScript  
 
 ### Other Tools
@@ -187,6 +166,28 @@ api/        → DRF serializers and viewsets
 ```
 
 ---
+# 🖥️ Website Screenshots
+
+
+## 🏠 Home Page
+<img src="portfolio_site/screenshots/Home_page.png" width="800">
+
+## 📂 Projects Page
+<img src="portfolio_site/screenshots/Project_page.png" width="800">
+
+## 🔐 Login Page
+<img src="portfolio_site/screenshots/Login_page.png" width="800">
+
+## 📝 Signup Page
+<img src="portfolio_site/screenshots/Signup_page.png" width="800">
+
+## 📊 Dashboard Page
+<img src="portfolio_site/screenshots/Dashboard_page.png" width="800">
+
+## 📬 Contact Page
+<img src="portfolio_site/screenshots/Contact_page.png" width="800">
+
+---
 
 # 📫 Let's Connect
 
@@ -197,5 +198,6 @@ api/        → DRF serializers and viewsets
 ---
 
 ⭐ If you like this project, consider giving it a star!
+
 
 
