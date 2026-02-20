@@ -6,6 +6,27 @@ This is a robust, full-stack web application built using **Django (Python)**, **
 It showcases my projects in **Artificial Intelligence**, **Machine Learning**, and **Software Development**.
 
 ---
+# 🖥️ Website Screenshots
+
+## 🏠 Home Page
+![Home Page](portfolio_site/screenshots/Home_page.png)
+
+## 📂 Projects Page
+![Project Page](portfolio_site/screenshots/Project_page.png)
+
+## 🔐 Login Page
+![Login Page](portfolio_site/screenshots/Login_page.png)
+
+## 📝 Signup Page
+![Signup Page](portfolio_site/screenshots/Signup_page.png)
+
+## 📊 Dashboard Page
+![Dashboard Page](portfolio_site/screenshots/Dashboard_page.png)
+
+## 📬 Contact Page
+![Contact Page](portfolio_site/screenshots/Contact_page.png) 
+
+---
 
 ## ✨ Features
 
@@ -174,3 +195,4 @@ api/        → DRF serializers and viewsets
 ---
 
 ⭐ If you like this project, consider giving it a star!
+
