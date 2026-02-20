@@ -6,7 +6,7 @@ This is a robust, full-stack web application built using **Django (Python)**, **
 It showcases my projects in **Artificial Intelligence**, **Machine Learning**, and **Software Development**.
 
 # Live Website Link(Render):
-[Aayush-Sharma-Portfolio](https://aayush-portfolio-51tn.onrender.com/)
+# [Aayush-Sharma-Portfolio](https://aayush-portfolio-51tn.onrender.com/)
 
 ## **Website Screenshots** at the end  ⬇️
 
@@ -201,6 +201,7 @@ api/        → DRF serializers and viewsets
 ---
 
 ⭐ If you like this project, consider giving it a star!
+
 
 
 
