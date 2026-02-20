@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+<div class="flex flex-col md:flex-row items-center justify-between py-12">
+    <div class="md:w-1/2 space-y-6">
+        <h1 class="text-5xl font-bold leading-tight">
+            Hi, I'm <span class="gradient-text">Aayush Sharma</span>
+        </h1>
+        <h2 class="text-2xl text-gray-600">B.Tech CS (AI & ML) @ LPU</h2>
+        <p class="text-lg text-gray-600">
+            I build intelligent systems and full-stack web applications. Passionate about Computer Vision, NLP, and scalable backend architectures. I maintain a CGPA of 8.00 and love solving complex problems.
+        </p>
+        <div class="flex space-x-4 mt-6">
+            <a href="{% url 'project_list' %}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium shadow-sm">View Projects</a>
+            
+            <!-- HIDES CONTACT BUTTON IF USER IS ADMIN -->
+            {% if not user.is_superuser %}
+            <a href="{% url 'contact' %}" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition font-medium">Contact Me</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+        <!-- Initials Avatar -->
+       <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+        <!-- Profile Image Container -->
+        <div class="w-64 h-64 rounded-full overflow-hidden shadow-2xl border-4 border-white bg-gray-100 flex-shrink-0">
+            <!-- Changed 'object-center' to 'object-top' to prevent the head from cutting off -->
+            <img src="{% static 'Aayush_formal.png' %}" alt="Aayush Sharma" class="w-full h-full object-cover object-top">
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Experience & Education Section -->
+<section class="py-12 bg-white rounded-xl shadow-sm p-8 mb-12 border border-gray-100 mt-10">
+    <h3 class="text-3xl font-bold mb-8 text-center">Journey So Far</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <h4 class="text-xl font-bold border-b pb-2 mb-4 text-blue-600"><i class="fas fa-graduation-cap mr-2"></i>Education</h4>
+            <div class="mb-4">
+                <p class="font-bold text-gray-800">B.Tech in Computer Science (AI & ML)</p>
+                <p class="text-gray-600">Lovely Professional University (LPU)</p>
+                <p class="text-sm text-gray-500">Aug 2023 - Present | CGPA: 8.00 | S1 List Achiever</p>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-xl font-bold border-b pb-2 mb-4 text-purple-600"><i class="fas fa-briefcase mr-2"></i>Experience</h4>
+            <div class="mb-4">
+                <p class="font-bold text-gray-800">Frontend Developer Intern</p>
+                <p class="text-gray-600">CodeSoft Online</p>
+                <p class="text-sm text-gray-500">Aug 2024 | Designed and developed responsive web interfaces using HTML, CSS, and JS.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-12">
+    <h3 class="text-3xl font-bold mb-8 text-center">Technical Arsenal</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-6 bg-white shadow-sm border border-gray-100 rounded-lg text-center hover:-translate-y-1 transition duration-200">
+            <i class="fab fa-python text-4xl text-blue-500 mb-3"></i>
+            <p class="font-semibold">Python, C++, Java</p>
+            <p class="text-xs text-gray-500 mt-1">Programming</p>
+        </div>
+        <div class="p-6 bg-white shadow-sm border border-gray-100 rounded-lg text-center hover:-translate-y-1 transition duration-200">
+            <i class="fas fa-brain text-4xl text-purple-500 mb-3"></i>
+            <p class="font-semibold">Scikit-Learn, CV, NLP</p>
+            <p class="text-xs text-gray-500 mt-1">AI & Machine Learning</p>
+        </div>
+        <div class="p-6 bg-white shadow-sm border border-gray-100 rounded-lg text-center hover:-translate-y-1 transition duration-200">
+            <i class="fas fa-code text-4xl text-green-500 mb-3"></i>
+            <p class="font-semibold">Django, Flask, Streamlit</p>
+            <p class="text-xs text-gray-500 mt-1">Frameworks</p>
+        </div>
+        <div class="p-6 bg-white shadow-sm border border-gray-100 rounded-lg text-center hover:-translate-y-1 transition duration-200">
+            <i class="fas fa-database text-4xl text-blue-800 mb-3"></i>
+            <p class="font-semibold">SQL & MySQL</p>
+            <p class="text-xs text-gray-500 mt-1">Databases</p>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements & Certs -->
+<section class="py-12 bg-blue-50 rounded-xl p-8 mb-12">
+    <h3 class="text-2xl font-bold mb-6 text-center">Achievements & Certifications</h3>
+    <ul class="space-y-3 text-gray-700 max-w-3xl mx-auto list-disc list-inside">
+        <li><strong>Data Structures:</strong> Completed 150+ DSA questions on LeetCode, CodeChef, and Neocollab.</li>
+        <li><strong>Certifications:</strong> Prompt Engineering (ChatGPT-4), Generative AI, and Computer Networking.</li>
+        <li><strong>Extracurriculars:</strong> District-level title in Skating demonstrating high performance under pressure.</li>
+    </ul>
+</section>
+
+<section class="py-12">
+    <div class="flex justify-between items-center mb-8">
+        <h3 class="text-3xl font-bold">Featured Projects</h3>
+        <a href="{% url 'project_list' %}" class="text-blue-600 hover:underline font-semibold">View All &rarr;</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% for project in projects %}
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+            <div class="p-6">
+                <h4 class="text-xl font-bold mb-2">{{ project.title }}</h4>
+                <p class="text-gray-600 text-sm mb-4">{{ project.description|truncatewords:20 }}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    {% for tech in project.tech_stack.split|slice:":3" %}
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                <a href="{% url 'project_detail' project.slug %}" class="text-blue-600 font-semibold hover:text-blue-800">Read Case Study &rarr;</a>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-gray-500">No projects added yet. Go to your dashboard to add your Crop Recommendation & OMR Checker projects!</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

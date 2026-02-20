@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Aayush Sharma | AI & ML Engineer{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="{% url 'home' %}" class="text-2xl font-bold font-mono">
+                Aayush<span class="text-blue-600">.AI</span>
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="{% url 'home' %}" class="hover:text-blue-600 transition">Home</a>
+                <a href="{% url 'project_list' %}" class="hover:text-blue-600 transition">Projects</a>
+                
+                <!-- HIDES CONTACT LINK IF USER IS ADMIN -->
+                {% if not user.is_superuser %}
+                <a href="{% url 'contact' %}" class="hover:text-blue-600 transition">Contact</a>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}" class="text-purple-600 font-semibold">Dashboard</a>
+                    <form action="{% url 'logout' %}" method="post" class="inline">
+                        {% csrf_token %}
+                        <button type="submit" class="hover:text-red-600 transition">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="text-blue-600">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Messages -->
+    <div class="container mx-auto px-6 mt-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="p-4 rounded-md mb-2 {% if message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-8">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">&copy; 2026 Aayush Sharma. AI/ML Engineering Student.</p>
+            <div class="space-x-4">
+                <a href="https://github.com/Aayush-infinity2" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/aayush-sharma2004/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:aayushsharma1715@gmail.com" class="text-gray-400 hover:text-white"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
