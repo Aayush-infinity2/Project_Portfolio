@@ -8,23 +8,25 @@ It showcases my projects in **Artificial Intelligence**, **Machine Learning**, a
 ---
 # 🖥️ Website Screenshots
 
+# 🖥️ Website Screenshots
+
 ## 🏠 Home Page
-![Home Page](portfolio_site/screenshots/Home_page.png)
+<img src="portfolio_site/screenshots/Home_page.png" width="800">
 
 ## 📂 Projects Page
-![Project Page](portfolio_site/screenshots/Project_page.png)
+<img src="portfolio_site/screenshots/Project_page.png" width="800">
 
 ## 🔐 Login Page
-![Login Page](portfolio_site/screenshots/Login_page.png)
+<img src="portfolio_site/screenshots/Login_page.png" width="800">
 
 ## 📝 Signup Page
-![Signup Page](portfolio_site/screenshots/Signup_page.png)
+<img src="portfolio_site/screenshots/Signup_page.png" width="800">
 
 ## 📊 Dashboard Page
-![Dashboard Page](portfolio_site/screenshots/Dashboard_page.png)
+<img src="portfolio_site/screenshots/Dashboard_page.png" width="800">
 
 ## 📬 Contact Page
-![Contact Page](portfolio_site/screenshots/Contact_page.png) 
+<img src="portfolio_site/screenshots/Contact_page.png" width="800">
 
 ---
 
@@ -195,4 +197,5 @@ api/        → DRF serializers and viewsets
 ---
 
 ⭐ If you like this project, consider giving it a star!
+
 
