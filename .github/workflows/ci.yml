@@ -59,3 +59,18 @@ jobs:
         EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
       run: |
         python manage.py test
+
+  # Deployment Job: Only runs if the tests successfully pass
+  deploy-to-render:
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    # Only deploy when pushing to main or master branches
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+      - name: Trigger Render Deployment
+        env:
+          # Securely pulling the Render Deploy Hook from GitHub Secrets
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
